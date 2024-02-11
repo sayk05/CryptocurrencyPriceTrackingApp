@@ -63,7 +63,7 @@ struct CreateRequestView: View {
             
             
             Button {
-                myRequestsViewModel.addRequest(name: cryptoListViewModel.cryptocurrencyCoins[index].name, priceHigherOrLower: priceHigherOrLower, myPrice: (Double(myPrice) ?? 0), symbol: cryptoListViewModel.cryptocurrencyCoins[index].symbol, priceUsd: cryptoListViewModel.cryptocurrencyCoins[index].priceUsd, id: cryptoListViewModel.cryptocurrencyCoins[index].id)
+                myRequestsViewModel.addRequest(name: cryptoListViewModel.cryptocurrencyCoins[index].name, priceHigherOrLower: priceHigherOrLower, myPrice: (Double(myPrice) ?? 0), symbol: cryptoListViewModel.cryptocurrencyCoins[index].symbol, priceUsd: updatePrice(index: index), id: cryptoListViewModel.cryptocurrencyCoins[index].id)
                 print("New request -> name: \(cryptoListViewModel.cryptocurrencyCoins[index].name), priceHigherOrLower: \(priceHigherOrLower), myPrice: \(Double(myPrice) ?? 0), symbol: \(cryptoListViewModel.cryptocurrencyCoins[index].symbol), priceUsd: \(updatePrice(index: index))")
             } label: {
                 Text("Create Request")
