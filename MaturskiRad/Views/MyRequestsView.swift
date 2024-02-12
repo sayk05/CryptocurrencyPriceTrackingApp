@@ -44,8 +44,13 @@ struct RequestView: View {
             VStack {
                 Text(request.symbol)
                     .bold()
-                Image(systemName: "checkmark.seal.fill")
-                    .foregroundStyle(isCompleted ? .green : .red)
+                if !isCompleted {
+                    Image(systemName: "checkmark.seal.fill")
+                        .foregroundStyle(.green)
+                } else {
+                    Image(systemName: "x.square.fill")
+                        .foregroundStyle(.red)
+                }
             }
             VStack(alignment: .leading) {
                 Text("Corrent price: \(correntPrice)")
