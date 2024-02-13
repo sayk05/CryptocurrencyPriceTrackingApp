@@ -18,7 +18,7 @@ final class CryptoListViewModel: ObservableObject {
 
 extension CryptoListViewModel {
     @MainActor
-    private func fetchCryptoPrice() async throws {
+    private func fetchCrypto() async throws {
         guard let url = URL(string: "https://api.coincap.io/v2/assets?ids=") else { throw CryptoError.invalidURL }
         
         do {
@@ -35,8 +35,7 @@ extension CryptoListViewModel {
     
     public func loadCrypto() {
         Task(priority: .high) {
-            try await fetchCryptoPrice()
+            try await fetchCrypto()
         }
-        print("updated")
     }
 }

@@ -9,5 +9,5 @@ import Foundation
 
 // MARK: - CryptoError
 enum CryptoError: Error {
-    case decodingError, networkError, invalidURL, unknown(Error)
+    case decodingError, networkError, invalidURL
 }
